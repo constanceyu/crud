@@ -16,6 +16,7 @@ The relational database has been the dominant tool for data storage over the pas
 
 ## Instructor
 Joshua Gomez, Sr. Software Engineer, Getty Research Institute
+
 joshuagomez@ucla.edu
 
 ## Grading
