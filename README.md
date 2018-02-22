@@ -16,12 +16,13 @@ The relational database has been the dominant tool for data storage over the pas
 
 ## Instructor
 Joshua Gomez, Sr. Software Engineer, Getty Research Institute
+
 joshuagomez@ucla.edu
 
 ## Grading
-- 9% Quizzes (9 total)
-- 90% Assignments (10 total)
-- 1% Participation
+- 10% Quizzes (9 total)
+- 20% In-class Exercises (10 total)
+- 70% Homework (10 total)
 
 ## Texts
 All textbooks listed below are optional, but highly recommended for students who have not taken a prior course in databases or search engines.
