@@ -1,7 +1,5 @@
 ﻿# CRUD: A Survey of Database Technology
 
-## Syllabus
-
 ## Abstract
 The relational database has been the dominant tool for data storage over the past thirty years. But with the growth of the web has come new requirements for faster searching and storing of large amounts of data and new tools have risen to meet those demands. This course will review the basics of relational databases as a foundation and as a basis for comparison to other tools. From there, we will look at alternative NoSQL databases (columnar, keystore, document, and graph), as well as search indexes, triplestores, and NewSQL databases. In-depth coverage of any topic should not be expected. The objective of the course is to give students an understanding of the wide variety of database solutions and the tradeoffs of using one over another.
 
@@ -26,9 +24,9 @@ joshuagomez@ucla.edu
 
 ## Texts
 All textbooks listed below are optional, but highly recommended for students who have not taken a prior course in databases or search engines.
-- Elmasri & Navathe: *Fundamentals of Database Systems*
+- Elmasri & Navathe: ***Fundamentals of Database Systems***, 2010
 	- *Please use the older (and cheaper) 6th edition. The assigned chapters correspond to this edition* ([Amazon](https://www.amazon.com/Fundamentals-Database-Systems-Ramez-Elmasri/dp/0136086209/))
-- Manning, Raghavan, & Schütze: *Introduction to Information Retrieval*
+- Manning, Raghavan, & Schütze: ***Introduction to Information Retrieval***, 2008
 	- *Free version available online:* https://nlp.stanford.edu/IR-book/
 
 ## Schedule
