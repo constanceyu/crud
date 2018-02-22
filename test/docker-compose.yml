@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   web:
-    image: joshuago78/crud 
+    image: joshuago78/crud
     ports:
       - 8888:8888
     volumes:
