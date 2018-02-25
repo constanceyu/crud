@@ -1,1 +1,2 @@
-Psycopg2
+Psycopg2-binary
+nose
