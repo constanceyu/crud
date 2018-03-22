@@ -11,7 +11,7 @@ The relational database has been the dominant tool for data storage over the pas
     - Docker: https://www.docker.com/community-edition#/download
 - Curiosity and fearlessness about trying new things.
 
-###Helpful
+### Helpful
 - Basic understanding of relational databases and SQL. 
 - Prior programming experience in Python.
 
