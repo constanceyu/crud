@@ -26,11 +26,12 @@ joshuagomez@ucla.edu
 - 70% Homework (10 total)
 
 ## Texts
+
+***All texts are optional!***
+
 - Elmasri & Navathe, Fundamentals of Database Systems, 6th ed., 2010. 
-    - *This book is optional. Recommended if you have not taken a prior course in databases.*
+    - *Recommended if you have not taken a prior course in databases.*
     - ***Use the older (and much cheaper!) 6th edition***
-- Manning, Raghavan, & Schütze, Introduction to Information Retrieval, 2008.
-    - ***Free version available online:*** [https://nlp.stanford.edu/IR-book/](https://nlp.stanford.edu/IR-book/)
 - Harrison, Next Generation Databases, 2015.
     - ***Electronic version available via UCLA Library:*** [http://ucla.worldcat.org/oclc/933784067](http://ucla.worldcat.org/oclc/933784067_)
 
@@ -41,35 +42,35 @@ joshuagomez@ucla.edu
 |--:|--|
 |Topics:|Course Introduction<br/>Relational Database Concepts<br/>Entity-Relationship Modeling<br/>Basic SQL |
 | Tools:|[SQLite](https://sqlite.org/docs.html)  |
-|  Readings:|Elmasri: chapters 3-4, 7 (optional: chapters 1-2)  |
+| Readings:|Elmasri: chapters 3-4, 7 |
 
 ### Week 2
 |  |  |
 |--:|--|
 |Topics:|Normalization<br/>Intermediate SQL|
-| Tools:|[PostgreSQL](https://www.postgresql.org/docs/10/static/index.html)  |
-|  Readings:|Elmasri: chapters 15, 5|
+| Tools:|[MySQL](https://dev.mysql.com/doc/refman/5.7/en/)|
+| Readings:|Elmasri: chapters 5, 15|
 
 ### Week 3
 |  |  |
 |--:|--|
-|Topics:|ACID Transaction<br/>Replication<br/>Partitions<br/>Advanced SQL|
-| Tools:|[TimescaleDB](https://docs.timescale.com/v0.9/main)  |
-|  Readings:|Elmasri: chapter 21|
+|Topics:|Indexing<br/>ACID Transactions<br/>Intermediate SQL<br/>\*GIS data (if time permits)|
+| Tools:|[PostgreSQL](https://www.postgresql.org/docs/10/static/index.html)  |
+|  Readings:|Elmasri: chapters 18, 20-21|
 
 ### Week 4
 |  |  |
 |--:|--|
-|Topics:|Intro to Information Retrieval<br/>Tokenization, Normalization, & Stemming|
-| Tools:|[ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)  |
-|  Readings:|Manning: chapters 1-3|
+|Topics:|Replication<br/>Partitions<br/>Advanced SQL<br/>\*Time series data (if time permits)|
+| Tools:|[TimescaleDB](https://docs.timescale.com/v0.9/main)  |
+|  Readings:|Elmasri: chapter 25|
 
 ### Week 5
 |  |  |
 |--:|--|
-|Topics:|IR Scoring & Evaluation<br/>Faceted Search|
-| Tools:|[Solr](https://lucene.apache.org/solr/resources.html)|
-|  Readings:|Manning: chapters 6-8|
+|Topics:|Intro to Information Retrieval<br/>Web Search<br/>Faceted Search|
+| Tools:|[ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)  |
+|  Readings:|Elmasri: chapter 27|
 
 ### Week 6
 |  |  |
@@ -106,7 +107,7 @@ joshuagomez@ucla.edu
 | Tools:|[GraphDB](http://graphdb.ontotext.com/documentation/free/)|
 |  Readings:|*TBD*|
 
-### Week 11 - *BONUS*
+### Week 11 - *(Bonus material if time permits)*
 |  |  |
 |--:|--|
 |Topics:|NewSQL Databases|
