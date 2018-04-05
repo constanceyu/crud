@@ -677,6 +677,17 @@ If spelling out table names is laborious, you can alias them
 
 ---
 
-# The End
+# End of Lecture
 
 That all looks easy, right?
+
+---
+
+# Exercise 1
+
+Instructions visible [here](https://github.com/joshuago78/crud/blob/master/week01/exercise/exercise01.md)
+
+You will need to use git to clone the repo:
+
+        git clone https://github.com/joshuago78/crud.git
+
