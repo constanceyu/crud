@@ -42,14 +42,14 @@ joshuagomez@ucla.edu
 |--:|--|
 |Topics:|Course Introduction<br/>Relational Database Concepts<br/>Entity-Relationship Modeling<br/>Basic SQL |
 | Tools:|[SQLite](https://sqlite.org/docs.html)  |
-| Readings:|Elmasri: chapters 3-4, 7 |
+| Readings:|Elmasri: chapters 3-4, 7, 9 |
 
 ### Week 2
 |  |  |
 |--:|--|
-|Topics:|Normalization<br/>Intermediate SQL|
+|Topics:|RDBMS Architecture<br/>Normalization<br/>Intermediate SQL|
 | Tools:|[MySQL](https://dev.mysql.com/doc/refman/5.7/en/)|
-| Readings:|Elmasri: chapters 5, 15|
+| Readings:|Elmasri: chapters 2, 5, 15|
 
 ### Week 3
 |  |  |
