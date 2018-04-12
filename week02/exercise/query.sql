@@ -1,4 +1,4 @@
-/* Exercise 1 - Task 3
+/* Week 02 Exercise - Task 3
    Query the DB */
 
 /* Query 1: 

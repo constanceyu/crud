@@ -1,4 +1,4 @@
-# Exercise 1
+# Week 02 Exercise
 
 In this exercise you will:
 - Create a small database with 3 tables
