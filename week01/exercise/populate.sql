@@ -1,37 +1,141 @@
-/* Exercise 1 - Task 2
-   Populate the DB */
+INSERT INTO "film" VALUES(1,'Fear and Desire',1953,72,33,0,'Drama','Drama,War',5.6,2.079);
+INSERT INTO "film" VALUES(2,'Killer''s Kiss',1955,67,40,0,'Drama','Crime,Drama,Film-Noir',6.7,10.638);
+INSERT INTO "film" VALUES(3,'The Killing',1956,83,320,0,'Thriller','Crime,Film-Noir,Thriller',8.1,40.759);
+INSERT INTO "film" VALUES(4,'Paths of Glory',1957,88,850,0,'Drama','Drama,War',8.5,72.249);
+INSERT INTO "film" VALUES(5,'Spartacus',1960,184,12000,60000,'Adventure','Adventure,Biography,Drama',8.0,72.569);
+INSERT INTO "film" VALUES(6,'Lolita ',1962,152,2100,9250,'Romance','Drama,Romance',6.7,24.437);
+INSERT INTO "film" VALUES(7,'Dr. Strangelove',1964,90,1800,9440,'Comedy','Comedy,War',8.6,231.79);
+INSERT INTO "film" VALUES(8,'2001: A Space Odyssey',1968,161,10500,190000,'Adventure','Adventure,Mystery,Sci-Fi',8.4,253.251);
+INSERT INTO "film" VALUES(9,'A Clockwork Orange',1971,137,2200,26589,'Drama','Crime,Drama,Sci-Fi',8.4,328.338);
+INSERT INTO "film" VALUES(10,'Barry Lyndon  ',1975,184,11000,20000,'Adventure','Adventure,Drama,Romance',8.1,64.023);
+INSERT INTO "film" VALUES(11,'Shining ',1980,144,19000,44000,'Horror','Horror,Mystery',8.5,346.241);
+INSERT INTO "film" VALUES(12,'Full Metal Jacket',1987,116,30000,46300,'Drama','Drama,War',8.4,280.283);
+INSERT INTO "film" VALUES(13,'Eyes Wide Shut ',1999,159,65000,162000,'Drama','Drama,Mystery,Thriller',7.2,154.685);
 
+INSERT INTO "actor" VALUES(1,'Frank Silvera');
+INSERT INTO "actor" VALUES(2,'Kenneth Harp');
+INSERT INTO "actor" VALUES(3,'Virginia Leith');
+INSERT INTO "actor" VALUES(4,'Paul Mazursky');
+INSERT INTO "actor" VALUES(5,'Stephen Coit');
+INSERT INTO "actor" VALUES(6,'Jamie Smith');
+INSERT INTO "actor" VALUES(7,'Irene Kane');
+INSERT INTO "actor" VALUES(8,'Jerry Jarret');
+INSERT INTO "actor" VALUES(9,'Mike Dana');
+INSERT INTO "actor" VALUES(10,'Sterling Hayden');
+INSERT INTO "actor" VALUES(11,'Coleen Gray');
+INSERT INTO "actor" VALUES(12,'Vince Edwards');
+INSERT INTO "actor" VALUES(13,'Marie Windsor');
+INSERT INTO "actor" VALUES(14,'Jay C. Flippen');
+INSERT INTO "actor" VALUES(15,'Ralph Meeker');
+INSERT INTO "actor" VALUES(16,'Adolphe Menjou');
+INSERT INTO "actor" VALUES(17,'Wayne Morris');
+INSERT INTO "actor" VALUES(18,'Kirk Douglas');
+INSERT INTO "actor" VALUES(19,'George MacReady');
+INSERT INTO "actor" VALUES(20,'Laurence Olivier');
+INSERT INTO "actor" VALUES(21,'Jean Simmons');
+INSERT INTO "actor" VALUES(22,'Charles Laughton');
+INSERT INTO "actor" VALUES(23,'Peter Ustinov');
+INSERT INTO "actor" VALUES(24,'James Mason');
+INSERT INTO "actor" VALUES(25,'Shelley Winters');
+INSERT INTO "actor" VALUES(26,'Sue Lyon');
+INSERT INTO "actor" VALUES(27,'Gary Cockrell');
+INSERT INTO "actor" VALUES(28,'Jerry Stovin');
+INSERT INTO "actor" VALUES(29,'Peter Sellers');
+INSERT INTO "actor" VALUES(30,'George C. Scott');
+INSERT INTO "actor" VALUES(31,'Keenan Wynn');
+INSERT INTO "actor" VALUES(32,'Slim Pickens');
+INSERT INTO "actor" VALUES(33,'Keir Dullea');
+INSERT INTO "actor" VALUES(34,'Gary Lockwood');
+INSERT INTO "actor" VALUES(35,'William Sylvester');
+INSERT INTO "actor" VALUES(36,'Daniel Richter');
+INSERT INTO "actor" VALUES(37,'Leonard Rossiter');
+INSERT INTO "actor" VALUES(38,'Malcolm McDowell');
+INSERT INTO "actor" VALUES(39,'Patrick Magee');
+INSERT INTO "actor" VALUES(40,'Adrienne Corri');
+INSERT INTO "actor" VALUES(41,'Michael Bates');
+INSERT INTO "actor" VALUES(42,'Warren Clark');
+INSERT INTO "actor" VALUES(43,'Ryan O''Neal');
+INSERT INTO "actor" VALUES(44,'Marisa Berenson');
+INSERT INTO "actor" VALUES(45,'Hardy Krüger');
+INSERT INTO "actor" VALUES(46,'Steven Berkoff');
+INSERT INTO "actor" VALUES(47,'Jack Nicholson');
+INSERT INTO "actor" VALUES(48,'Shelley Duvall');
+INSERT INTO "actor" VALUES(49,'Danny Lloyd');
+INSERT INTO "actor" VALUES(50,'Scatman Crothers');
+INSERT INTO "actor" VALUES(51,'Barry Nelson');
+INSERT INTO "actor" VALUES(52,'Matthew Modine');
+INSERT INTO "actor" VALUES(53,'Adam Baldwin');
+INSERT INTO "actor" VALUES(54,'Vincent D''Onofrio');
+INSERT INTO "actor" VALUES(55,'Kevyn Howard');
+INSERT INTO "actor" VALUES(56,'John Terry');
+INSERT INTO "actor" VALUES(57,'Nicole Kidman');
+INSERT INTO "actor" VALUES(58,'Tom Cruise');
+INSERT INTO "actor" VALUES(59,'Madison Eginton');
+INSERT INTO "actor" VALUES(60,'Jackie Sawris');
+INSERT INTO "actor" VALUES(61,'Sydney Pollack');
 
-INSERT INTO film 
-VALUES (1, "Fear and Desire",1953,72,33,0,"Drama","Drama | War",5.6,2.079);
-
-INSERT INTO actor
-VALUES (1, "Frank Silvera"),
-       (2, "Kenneth Harp"),
-       (3, "Paul Mazursky"),
-       (4, "Stephen Coit");
-
-INSERT INTO starring
-VALUES (1, 1),
-       (1, 2),
-       (1, 3),
-       (1, 4);
-
-
-INSERT INTO film 
-VALUES (2, "Killer's Kiss",1955,67,40,0,"Drama","Crime | Drama | Film-Noir",6.7,10.638);
-
-INSERT INTO actor
-VALUES (5, "Jamie Smith"),
-       (6, "Irene Kane"),
-       (7, "Jerry Jarret"),
-       (8, "Mike Dana");
-
-INSERT INTO starring
-VALUES (2, 1), /* Frank Silvera! */
-       (2, 5),
-       (2, 6),
-       (2, 7),
-       (2, 8);
-
-/* You do the rest... */
+INSERT INTO "starring" VALUES(1,1);
+INSERT INTO "starring" VALUES(1,2);
+INSERT INTO "starring" VALUES(1,3);
+INSERT INTO "starring" VALUES(1,4);
+INSERT INTO "starring" VALUES(1,5);
+INSERT INTO "starring" VALUES(2,6);
+INSERT INTO "starring" VALUES(2,1);
+INSERT INTO "starring" VALUES(2,7);
+INSERT INTO "starring" VALUES(2,8);
+INSERT INTO "starring" VALUES(2,9);
+INSERT INTO "starring" VALUES(3,10);
+INSERT INTO "starring" VALUES(3,11);
+INSERT INTO "starring" VALUES(3,12);
+INSERT INTO "starring" VALUES(3,13);
+INSERT INTO "starring" VALUES(3,14);
+INSERT INTO "starring" VALUES(4,15);
+INSERT INTO "starring" VALUES(4,16);
+INSERT INTO "starring" VALUES(4,17);
+INSERT INTO "starring" VALUES(4,18);
+INSERT INTO "starring" VALUES(4,19);
+INSERT INTO "starring" VALUES(5,18);
+INSERT INTO "starring" VALUES(5,20);
+INSERT INTO "starring" VALUES(5,21);
+INSERT INTO "starring" VALUES(5,22);
+INSERT INTO "starring" VALUES(5,23);
+INSERT INTO "starring" VALUES(6,24);
+INSERT INTO "starring" VALUES(6,25);
+INSERT INTO "starring" VALUES(6,26);
+INSERT INTO "starring" VALUES(6,27);
+INSERT INTO "starring" VALUES(6,28);
+INSERT INTO "starring" VALUES(7,29);
+INSERT INTO "starring" VALUES(7,30);
+INSERT INTO "starring" VALUES(7,10);
+INSERT INTO "starring" VALUES(7,31);
+INSERT INTO "starring" VALUES(7,32);
+INSERT INTO "starring" VALUES(8,33);
+INSERT INTO "starring" VALUES(8,34);
+INSERT INTO "starring" VALUES(8,35);
+INSERT INTO "starring" VALUES(8,36);
+INSERT INTO "starring" VALUES(8,37);
+INSERT INTO "starring" VALUES(9,38);
+INSERT INTO "starring" VALUES(9,39);
+INSERT INTO "starring" VALUES(9,40);
+INSERT INTO "starring" VALUES(9,41);
+INSERT INTO "starring" VALUES(9,42);
+INSERT INTO "starring" VALUES(10,43);
+INSERT INTO "starring" VALUES(10,44);
+INSERT INTO "starring" VALUES(10,39);
+INSERT INTO "starring" VALUES(10,45);
+INSERT INTO "starring" VALUES(10,46);
+INSERT INTO "starring" VALUES(11,47);
+INSERT INTO "starring" VALUES(11,48);
+INSERT INTO "starring" VALUES(11,49);
+INSERT INTO "starring" VALUES(11,50);
+INSERT INTO "starring" VALUES(11,51);
+INSERT INTO "starring" VALUES(12,52);
+INSERT INTO "starring" VALUES(12,53);
+INSERT INTO "starring" VALUES(12,54);
+INSERT INTO "starring" VALUES(12,55);
+INSERT INTO "starring" VALUES(12,56);
+INSERT INTO "starring" VALUES(13,57);
+INSERT INTO "starring" VALUES(13,58);
+INSERT INTO "starring" VALUES(13,59);
+INSERT INTO "starring" VALUES(13,60);
+INSERT INTO "starring" VALUES(13,61);
