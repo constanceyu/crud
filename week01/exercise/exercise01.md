@@ -55,7 +55,7 @@ In the file `kubrick_films.csv` you will find a set of data about movies directe
 Open the file `query.sql` and write queries to answer the questions below. Copy and paste each query into the SQLite shell to test your results againts the expected results.
 
 1. Query 1: Get the title and year for films made before 1970
-    - expected result:
+    - Expected result:
             
             Fear and Desire|1953
             Killer's Kiss|1955
@@ -67,7 +67,7 @@ Open the file `query.sql` and write queries to answer the questions below. Copy 
             2001: A Space Odyssey|1968
 
 2. Query 2: Get the title, year, and boxoffice for all films, sorted by boxoffice, descending
-    - expected result:
+    - Expected result:
             
             2001: A Space Odyssey|1968|190000
             Eyes Wide Shut |1999|162000
@@ -84,13 +84,13 @@ Open the file `query.sql` and write queries to answer the questions below. Copy 
             Paths of Glory|1957|0
 
 3. Query 3: Get the title of all movies starring "Sterling Hayden"
-    - expected results:
+    - Expected result:
             
             The Killing
             Dr. Strangelove
 
 4. Query 4: Get the title and rating of all movies with a rating greater than or equal to 8.0, in ascending order
-    - expected results:
+    - Expected result:
 
             Spartacus|8.0
             The Killing|8.1
@@ -103,7 +103,7 @@ Open the file `query.sql` and write queries to answer the questions below. Copy 
             Dr. Strangelove|8.6
 
 5. Query 5: Get the title, year, and imdb_votes of the ten films with the largest imdb_vote, sorted by imdb_votes descending
-    - expected results:
+    - Expected result:
 
             Shining |1980|346.241
             A Clockwork Orange|1971|328.338
@@ -117,24 +117,24 @@ Open the file `query.sql` and write queries to answer the questions below. Copy 
             The Killing|1956|40.759
 
 6. Query 6: Get the title of every film that has the *word* "A" in it (not the letter, but the word).
-    - Expected results:
+    - Expected result:
 
             2001: A Space Odyssey
             A Clockwork Orange
 
 7. Query 7a and 7b
     - Query 7a: Get the total number of roles stored in the starring table
-        - Expected results:
+        - Expected result:
 
                 65
 
     - Query 7b: Now get the number of unique actors recorded in the starring table
-        - Expected results:
+        - Expected result:
 
                 61
 
 8. Get the minimum, maximum, average and sum total of the boxoffice numbers for all films
-    - Expected results:
+    - Expected result:
 
             0|190000|43659.9230769231|567579.0
 
@@ -147,7 +147,7 @@ Open the file `query.sql` and write queries to answer the questions below. Copy 
         - *I did all of this for you*
     - 9b. Use a natural join to get titles and director names. 
         - Since you haven't added foreign keys to Kubrick yet, this should only return results for Gilliam
-        - expected result:
+        - Expected result:
 
                 Brazil|Terry Gilliam
                 Fisher King|Terry Gilliam
@@ -155,6 +155,7 @@ Open the file `query.sql` and write queries to answer the questions below. Copy 
 
     - 9c. Now do a left outer join on film and director.
         - This should get you all the films with nulls for Kubrick.
+        - Expected result:
 
                 Fear and Desire|
                 Killer's Kiss|
@@ -173,3 +174,28 @@ Open the file `query.sql` and write queries to answer the questions below. Copy 
                 Brazil|Terry Gilliam
                 Fisher King|Terry Gilliam
                 12 Monkeys|Terry Gilliam
+
+10. Three Parts
+    - 10a. Insert directorid foregin keys for all of Kubrick's films
+        - *I did this for you*
+        
+    - 10b. Get the list of genres of Kubrick's movies and the number of films in that genre in descending order
+        - Expected result:
+
+                Drama|6
+                Adventure|3
+                Comedy|1
+                Horror|1
+                Romance|1
+                Thriller|1
+
+    - 10c. Perform the same query but get just the genres in which he made only one film
+        - Expected result:
+
+                Comedy|1
+                Horror|1
+                Romance|1
+                Thriller|1
+
+
+

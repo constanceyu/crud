@@ -81,5 +81,25 @@ VALUES ("Brazil", 1985, 2),
 
 /*  - 9b. Use a natural join to get titles and director names. 
         - Since you haven't added foreign keys to Kubrick yet, this should only return 
-          results for Gilliam
-    - 9c. Now do a left outer join on film and director. */
+          results for Gilliam */
+
+
+/*  - 9c. Now do a left outer join on film and director. */
+
+
+
+/* Query 10
+
+    - 10a. Insert directorid foregin keys for all of Kubrick's films */
+
+
+
+/*  - 10b. Get the list of genres of Kubrick's movies and the number of 
+    films in that genre in descending order */
+
+
+
+/*  - 10c. Perform the same query but get just the genres in which he 
+    made only one film */
+
+
