@@ -269,7 +269,8 @@ CREATE TABLE chapter(
     number  INTEGER,
     title   VARCHAR(256),
     bookID  INTEGER REFERENCES book ON DELETE CASCADE
-);```
+);
+```
 
 Options include: `SET DEFAULT`, `SET NULL`, `CASCADE`, `RESTRICT`, `NO ACTION`
 
@@ -288,7 +289,8 @@ CREATE TABLE chapter(
     isbn    VARCHAR(15) REFERENCES book.isbn
             ON DELETE CASCADE
             ON UPDATE CASCADE
-);```
+);
+```
 
 Same options as `ON DELETE`
 
@@ -299,15 +301,18 @@ Same options as `ON DELETE`
 Want to rename a table?
 
 ```sql
-ALTER TABLE actors RENAME TO thesbians;```
+ALTER TABLE actors RENAME TO thesbians;
+```
 
 What if you want to add or remove a column?
 
 ```sql
-ALTER TABLE chapter ADD COLUMN pageCount INTEGER;```
+ALTER TABLE chapter ADD COLUMN pageCount INTEGER;
+```
 
 ```sql
-ALTER TABLE chapter DROP COLUMN pageCount;```
+ALTER TABLE chapter DROP COLUMN pageCount;
+```
 
 `DROP COLUMN` not supported by some DBs
 
@@ -331,7 +336,8 @@ ALTER TABLE chapter DROP COLUMN pageCount;```
 ```sql
 SELECT DISTINCT musician.name, played_on.role
 FROM musician, played_on
-WHERE played_on.musicianID=musician.id;```
+WHERE played_on.musicianID=musician.id;
+```
 
 ----
 
@@ -343,7 +349,8 @@ WHERE played_on.musicianID=musician.id;```
 
 - e.g. Find books with "information" in the title
 ```sql
-SELECT * FROM book WHERE title LIKE '%information%';```
+SELECT * FROM book WHERE title LIKE '%information%';
+```
 
 ----
 
@@ -354,7 +361,8 @@ Too many results?
 `LIMIT` them!
 
 ```sql
-SELECT * FROM books WHERE title LIKE '%the%' LIMIT 20;```
+SELECT * FROM books WHERE title LIKE '%the%' LIMIT 20;
+```
 
 ----
 
@@ -365,7 +373,8 @@ What if you want to page through the results?
 Use `LIMIT` and `OFFSET` together
 
 ```sql
-SELECT * FROM books WHERE title LIKE '%the%' LIMIT 20 OFFSET 20;```
+SELECT * FROM books WHERE title LIKE '%the%' LIMIT 20 OFFSET 20;
+```
 
 ----
 
@@ -399,10 +408,12 @@ AND album.id IN (
     - `group_concat(X, Y)`
 
 ```sql
-SELECT count(title) FROM films;```
+SELECT count(title) FROM films;
+```
 
 ```sql
-SELECT max(earnings), avg(earnings) FROM films;```
+SELECT max(earnings), avg(earnings) FROM films;
+```
 
 ----
 
@@ -414,7 +425,8 @@ SELECT max(earnings), avg(earnings) FROM films;```
 ```sql
 SELECT bookt.title, author.name
 FROM book, author
-WHERE book.authorid=author.id;```
+WHERE book.authorid=author.id;
+```
 
 - If you want to include rows with NULLs you have to do an `OUTER JOIN`
 
@@ -427,7 +439,8 @@ WHERE book.authorid=author.id;```
 ```sql
 SELECT book.title, author.name
 FROM book 
-LEFT OUTER JOIN ON book.authorid=author.id;```
+LEFT OUTER JOIN ON book.authorid=author.id;
+```
 
 ![left outer join result](images/leftouterjoin.png)
 
@@ -440,7 +453,8 @@ LEFT OUTER JOIN ON book.authorid=author.id;```
 ```sql
 SELECT book.title, author.name
 FROM book 
-RIGHT OUTER JOIN ON book.authorid=author.id;```
+RIGHT OUTER JOIN ON book.authorid=author.id;
+```
 
 ![right outer join result](images/rightouterjoin.png)
 
@@ -453,7 +467,8 @@ RIGHT OUTER JOIN ON book.authorid=author.id;```
 ```sql
 SELECT book.title, author.name
 FROM book 
-FULL OUTER JOIN ON book.authorid=author.id;```
+FULL OUTER JOIN ON book.authorid=author.id;
+```
 
 ![left outer join result](images/fullouterjoin.png)
 
@@ -468,7 +483,8 @@ FULL OUTER JOIN ON book.authorid=author.id;```
 SELECT count(id), genre
 FROM albums
 GROUP BY genre
-ORDER BY count(id) DESC;```
+ORDER BY count(id) DESC;
+```
 
 ----
 
@@ -482,7 +498,8 @@ SELECT count(id), genre
 FROM albums
 GROUP BY genre
 HAVING count(id) > 1000
-ORDER BY count(id) DESC;```
+ORDER BY count(id) DESC;
+```
 
 ---
 
