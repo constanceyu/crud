@@ -1,7 +1,3 @@
----
-title: Lecture 1
-theme: beige
----
 
 # CRUD
 
