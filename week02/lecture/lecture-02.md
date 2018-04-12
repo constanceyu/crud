@@ -136,7 +136,8 @@
 SELECT o.Title, o.ArtistName, e.Museum 
 FROM Objects o, Exhibition_Loans e 
 WHERE e.ExName="Impress Me"
-AND e.Title = o.Title;```
+AND e.Title = o.Title;
+```
 
 ![Spurious Tuples](images/spurious.png)
 
