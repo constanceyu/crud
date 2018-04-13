@@ -52,7 +52,7 @@
 
 ---
 
-# Schema Normalization
+# Informal Normalization
 
 ----
 
@@ -143,7 +143,7 @@ AND e.Title = o.Title;
 
 ---
 
-# Normalization
+# Formal Normalization
 
 ----
 
