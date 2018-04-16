@@ -8,11 +8,11 @@ CREATE TABLE film(
     year            INTEGER             NOT NULL,
     duration        INTEGER,
     budge           INTEGER,
-    boxOffice       INTEGER,
+    boxoffice       INTEGER,
     genre           VARCHAR(32),
-    complexGenre    VARCHAR(64),
+    complex_genre   VARCHAR(64),
     rating          REAL,
-    IMDBvotes       REAL
+    imdb_votes      REAL
 );
 
 

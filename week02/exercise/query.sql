@@ -9,12 +9,12 @@ FROM film
 WHERE year<1970;
 
 /* Query 2
-   Get the title, year, and boxOffice
-   for all films, sorted by boxOffice, descending */
+   Get the title, year, and boxoffice
+   for all films, sorted by boxoffice, descending */
 
-SELECT title, year, boxOffice
+SELECT title, year, boxoffice
 FROM film
-ORDER BY boxOffice DESC;
+ORDER BY boxoffice DESC;
 
 
 /* Query 3
@@ -69,7 +69,7 @@ SELECT count(DISTINCT actorid) FROM starring;
    8. Get the minimum, maximum, average and sum total 
    of the boxoffice numbers for all films */
 
-SELECT min(boxOffice), max(boxOffice), avg(boxOffice), total(boxOffice)
+SELECT min(boxoffice), max(boxoffice), avg(boxoffice), total(boxoffice)
 FROM film;
 
 
