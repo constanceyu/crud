@@ -1,4 +1,4 @@
-INSERT INTO "film" VALUES(1,'Fear and Desire',1953,72,33,0,'Drama','Drama,War',5.6,2.079);
+-- INSERT INTO "film" VALUES(1,'Fear and Desire',1953,72,33,0,'Drama','Drama,War',5.6,2.079);
 INSERT INTO "film" VALUES(2,'Killer''s Kiss',1955,67,40,0,'Drama','Crime,Drama,Film-Noir',6.7,10.638);
 INSERT INTO "film" VALUES(3,'The Killing',1956,83,320,0,'Thriller','Crime,Film-Noir,Thriller',8.1,40.759);
 INSERT INTO "film" VALUES(4,'Paths of Glory',1957,88,850,0,'Drama','Drama,War',8.5,72.249);
