@@ -10,7 +10,7 @@ CREATE TABLE film(
     budge           INTEGER,
     boxoffice       INTEGER,
     genre           VARCHAR(32),
-    complex_genre   VARCHAR(64),
+    genre_complex   VARCHAR(64),
     rating          REAL,
     imdb_votes      REAL
 );
