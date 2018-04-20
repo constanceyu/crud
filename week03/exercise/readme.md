@@ -245,7 +245,7 @@ Now insert a value and see what happens.
 
 ```sql
 INSERT INTO object (name, value, collectionid)
-VALUES ('Obama selfie 1', 2000.00, 1);
+VALUES ('Obama selfie 1', 2000.00, 3);
 
 SELECT * FROM collection;
 ```
@@ -258,7 +258,7 @@ Expected results:
 +----+-------------+--------------+
 |  1 | photographs |         3.46 |
 |  2 | paintings   | 118000000.00 |
-|  3 | sculpture   |  16004199.99 |
+|  3 | sculpture   |  16002199.99 |
 +----+-------------+--------------+
 3 rows in set (0.00 sec)
 ```
@@ -285,7 +285,7 @@ Expected results:
 +----+-------------+--------------+
 |  1 | photographs |      2003.46 |
 |  2 | paintings   | 118000000.00 |
-|  3 | sculpture   |  16002199.99 |
+|  3 | sculpture   |  16000199.99 |
 +----+-------------+--------------+
 3 rows in set (0.00 sec)
 ```
@@ -308,7 +308,7 @@ Expected results:
 +----+-------------+--------------+
 |  1 | photographs |         3.46 |
 |  2 | paintings   | 118000000.00 |
-|  3 | sculpture   |  16002199.99 |
+|  3 | sculpture   |  16000199.99 |
 +----+-------------+--------------+
 3 rows in set (0.00 sec)
 ```
