@@ -40,19 +40,20 @@ ORDER BY rating ASC;
    Get the title, year, and imdb_votes of the ten films 
    with the largest imdb_vote, sorted by imdb_votes descending */
 
-SELECT title, year, IMDBvotes
+SELECT title, year, imdb_votes
 FROM film
-ORDER BY IMDBvotes DESC
+ORDER BY imdb_votes DESC
 LIMIT 10;
 
 
 /* Query 6
    Get the title of every film that has the *word* "A" in it 
    (not the letter, but the word) */
+   
 SELECT title
 FROM film
-WHERE title LIKE 'A %' 
-OR title LIKE ' A %';
+WHERE title LIKE 'A %'
+OR title LIKE '% A %';
 
 
 /* Query 7a
