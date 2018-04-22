@@ -40,7 +40,7 @@ Drama,Drama,Thriller,Drama,Adventure,Romance,Comedy,Adventure,Drama,Adventure,Ho
     Perform the same operation, but use the DISTINCT keyword *inside*
     the function to remove the repeated genres. */
 
-SELECT ...;
+SELECT group_concat(DISTINCT genre) FROM film;
 
 /* Expected result:
 
@@ -50,7 +50,7 @@ Drama,Thriller,Adventure,Romance,Comedy,Horror
 
 /* 1c. Now get the distinct values for the genre_complex field */
 
-SELECT ...;
+SELECT group_concat(DISTINCT genre_complex) FROM film;
 
 /* Expected result:
 
@@ -78,7 +78,8 @@ Drama,War,Crime,Drama,Film-Noir,Crime,Film-Noir,Thriller,Adventure,Biography,Dra
     Don't foregt to autoincrement the id */
 
 CREATE TABLE genre(
-    ...
+    id          INTEGER         PRIMARY KEY AUTOINCREMENT,
+    label       VARCHAR(32)     NOT NULL UNIQUE
 );
 
 /* 2b: Populate the genres
@@ -110,7 +111,9 @@ VALUES ("Crime"),
     deleted if the primary keys they refer to are deleted */
 
 CREATE TABLE has_genre(
-    ...
+    filmid      INTEGER     NOT NULL REFERENCES film(id) ON DELETE CASCADE,
+    genreid     INTEGER     NOT NULL REFERENCES genre(id) ON DELETE CASCADE,
+    PRIMARY KEY (filmid, genreid)
 );
 
 /* 2d: Populate the has_genre table *
@@ -173,7 +176,7 @@ The Killing|Crime,Film-Noir,Thriller|Crime,Thriller,Film-Noir
 
     Step 1: Rename film to old_film */
 
-ALTER TABLE ...;
+ALTER TABLE film RENAME TO old_film;
 
 /*  Step 2: Create a new film table
     It should have the same schema as the original table, but without
@@ -183,7 +186,15 @@ ALTER TABLE ...;
     statement for the original table and then just copy, paste, & edit */
 
 CREATE TABLE film(
-    ...
+    id              INTEGER             PRIMARY KEY AUTOINCREMENT,
+    title           VARCHAR(128)        NOT NULL,
+    year            INTEGER             NOT NULL,
+    duration        INTEGER,
+    budge           INTEGER,
+    boxoffice       INTEGER,
+    genre           VARCHAR(32),
+    rating          REAL,
+    imdb_votes      REAL
 );
 
 /* Step 3: Copy the data over
@@ -191,9 +202,15 @@ CREATE TABLE film(
     Use the INSERT INTO SELECT like we did in Part 2d. But this time you will
     need to simply specify all the attributes. */
 
-INSERT INTO ...
-SELECT ...
-FROM ...;
+-- 2d:
+-- INSERT INTO has_genre (filmid, genreid)
+-- SELECT film.id, genre.id
+-- FROM film, genre
+-- WHERE INSTR(film.genre_complex, genre.label);
+
+INSERT INTO film
+SELECT id, title, year, duration, budge, boxoffice, genre, rating, imdb_votes
+FROM old_film;
 
 /* Step 4: Now drop the old_film table. */
 
@@ -222,7 +239,11 @@ VALUES (14, 4),
    This will involve using the group_concat() function,
    and hence the GROUP BY clause. */
 
-SELECT ...;
+SELECT genre.label, group_concat(title)
+FROM genre, film, has_genre
+WHERE film.id=has_genre.filmid
+AND has_genre.genreid=genre.id
+GROUP BY genre.label;
 
 /* Expected result
 
@@ -248,7 +269,13 @@ War|Fear and Desire,Paths of Glory,Dr. Strangelove,Full Metal Jacket
     You will need to use the GROUP BY clause.
     Be sure to use DISTINCT inside the count() function. */
 
-SELECT ...;
+SELECT director.name, count(DISTINCT genre.label)
+FROM director, genre, film, has_genre
+WHERE film.id=has_genre.filmid
+AND director.id=film.directorid
+AND genre.id=has_genre.genreid
+GROUP BY director.name;
+
 
 /* Expected Result:
 
