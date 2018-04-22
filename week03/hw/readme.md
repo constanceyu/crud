@@ -336,3 +336,7 @@ avg(diff)
 ```
 
 It takes this user about six months to read a book that was added to the list. Of course, that's only counting books that were actually read. This does not account for all the books that were added to the "to-read" shelf, but still have not been read. I leave it to you to figure out how many of those are on this user's list.
+
+### Shutting Down
+
+To shut down your Docker containers simply do a CTRL+C in your terminal.
