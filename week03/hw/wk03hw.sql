@@ -77,8 +77,11 @@
     field in addition to finding books with `author="Isaac Asimov"`.
 */
 
+-- INSTR(string, substring)
 SELECT title, author, additional_authors
-...
+FROM books
+WHERE author="Isaac Asimov"
+OR INSTR(additional_authors, "Isaac Asimov")
 ;
 
 /*  Expected result (I show only the titles here):
@@ -105,7 +108,9 @@ Foundation (Foundation #1)
     been read, simply require that `date_read` is not null.
 */
 
-SELECT 
+SELECT count(bookid)
+FROM books
+WHERE date_read IS NOT NULL
 ;
 
 /*  Expected result:
@@ -158,8 +163,12 @@ month   count
     here.
 */
 
-SELECT 
-;
+SELECT DAY(date_read) AS day, count(title) AS count
+FROM books
+WHERE date_read IS NOT NULL
+AND MONTH(date_read)=1
+GROUP BY DAY(date_read);
+
 
 /*  Expected result:
 
@@ -202,8 +211,19 @@ day count
     e.g. NOT (___ AND ___)
 */
 
-SELECT 
-;
+-- Query 3:
+-- SELECT month(date_read) AS month, count(title) AS count
+-- FROM books 
+-- WHERE date_read IS NOT NULL
+-- GROUP BY month(date_read);
+
+
+SELECT month(date_read) AS month, count(title) AS count
+FROM books
+WHERE date_read IS NOT NULL
+AND NOT (MONTH(date_read)=1 AND DAY(date_read)=1)
+GROUP BY month(date_read);
+
 
 /*  Expected result:
 
@@ -234,7 +254,10 @@ slight rise at the end of the year, likely due to vacation.
     By difference, I mean simply subtracting avg_rating from my_rating.
 */
 
-SELECT 
+SELECT my_rating, avg_rating, my_rating - avg_rating AS diff
+FROM books
+WHERE my_rating > 0
+AND avg_rating > 0
 ;
 
 /*  Expected result:
@@ -283,7 +306,14 @@ results truncated
     statement) must have an alias, which is why you must put AS ratings;
 
 */
-SELECT 
+
+SELECT AVG(my_rating), VARIANCE(my_rating), STD(my_rating), AVG(avg_rating), VARIANCE(avg_rating), STD(avg_rating), AVG(diff)
+FROM (
+    SELECT my_rating, avg_rating, my_rating - avg_rating AS diff
+    FROM books
+    WHERE my_rating > 0
+    AND avg_rating > 0
+) AS ratings
 ;
 
 /*  Expected result:
@@ -329,7 +359,9 @@ avg(diff)
     DATEDIFF() function to calculate that for you.
 */
 
-SELECT 
+SELECT date_added, date_read, DATEDIFF(date_read,date_added) AS diff, title
+FROM books
+WHERE date_read IS NOT NULL
 ;
 
 /* Expected results:
@@ -374,7 +406,12 @@ results truncated
     Rewrite Query 8 such that results with a negative `diff` are not included.
 */
 
-SELECT 
+-- HAVING is applied after GROUPBY
+-- WHERE is before
+SELECT date_added, date_read, DATEDIFF(date_read,date_added) AS diff, title
+FROM books
+WHERE date_read IS NOT NULL
+HAVING diff >= 0
 ;
 
 /*  Expected results:
@@ -393,7 +430,13 @@ Same as Query 8, but without the rows that had negative diffs
     it `date_diffs`.
 */
 
-SELECT 
+SELECT AVG(diff)
+FROM (
+    SELECT date_added, date_read, DATEDIFF(date_read,date_added) AS diff, title
+    FROM books
+    WHERE date_read IS NOT NULL
+    HAVING diff >= 0
+) AS date_diffs
 ;
 
 /*  Expected results:
