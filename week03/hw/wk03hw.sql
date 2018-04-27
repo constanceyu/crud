@@ -254,7 +254,7 @@ slight rise at the end of the year, likely due to vacation.
     By difference, I mean simply subtracting avg_rating from my_rating.
 */
 
-SELECT my_rating, avg_rating, my_rating - avg_rating AS diff
+SELECT my_rating, avg_rating, (my_rating - avg_rating) AS diff
 FROM books
 WHERE my_rating > 0
 AND avg_rating > 0
