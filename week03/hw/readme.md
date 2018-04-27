@@ -33,7 +33,7 @@ Password: crud
 Database: (leave empty)
 ```
 
-6. Click on the "Create database" link. At the next screen enter `goodreads` in the text box, select `ut8_general_ci` for the collation and click Save.
+6. Click on the "Create database" link. At the next screen enter `goodreads` in the text box, select `utf8_general_ci` for the collation and click Save.
 
 7. In the column on the left, click on the "Import" link. Click the "Choose Files" button, select the `populate.sql` file, and click "Execute". It should say "1,268 queries executed OK" in a green bar.
 
@@ -332,7 +332,7 @@ it `date_diffs`.
 ```
 avg(diff)
 ---------
-183.2020
+149.3574
 ```
 
 It takes this user about six months to read a book that was added to the list. Of course, that's only counting books that were actually read. This does not account for all the books that were added to the "to-read" shelf, but still have not been read. I leave it to you to figure out how many of those are on this user's list.
