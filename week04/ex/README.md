@@ -79,6 +79,7 @@ In this exercise you will create views, indexes, and a new user, and you will gr
 
 10. Query everything from the `safe_secrets` view.
     - Expected results:
+    
     | name         | secret              |
     | ------------ | ------------------- |
     | Tony Stark   | I peed in my armor  |
