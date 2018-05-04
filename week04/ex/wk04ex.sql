@@ -40,7 +40,9 @@ You should see the following files:
 */
 
 CREATE TABLE person(
-    ...
+    id          SERIAL          PRIMARY KEY,
+    name        VARCHAR(32)     NOT NULL,
+    dob         DATE
 );
 
 /* 
@@ -55,7 +57,10 @@ CREATE TABLE person(
 */
 
 CREATE TABLE secret(
-    ...
+    id          SERIAL          PRIMARY KEY,
+    secret      VARCHAR(256)    NOT NULL,
+    level       SMALLINT        NOT NULL,
+    personid    INT             REFERENCES person
 );
 
 /* 
@@ -87,14 +92,20 @@ INSERT INTO secret VALUES
     | Thor Odinson | NULL       | I miss my hammer        | 1     |
 */
 
-SELECT ...;
+SELECT name, dob, secret, level
+FROM person, secret
+WHERE person.id=secret.personid;
 
 /*
 5. Now create a view named `safe_secrets` that uses gets just the `name` and 
 `secret` for all secrets that have a level of 0.
 */
 
-CREATE VIEW ...;
+CREATE VIEW safe_secrets AS
+SELECT name, dob, secret, level
+FROM person, secret
+WHERE person.id=secret.personid
+AND level=0;
 
 SELECT * FROM safe_secrets;
 
@@ -102,13 +113,13 @@ SELECT * FROM safe_secrets;
 6. Create a user named `thanos`. Give him the password `ilovedeath`
 */
 
-CREATE USER ...;
+CREATE USER thanos WITH PASSWORD 'ilovedeath';
 
 /*
 7. Give thanos permission to read from the `safe_secrets` view.
 */
 
-GRANT ...;
+GRANT SELECT ON safe_secrets TO thanos;
 
 /*
 8. Now log out of Adminer and log back in as thanos.
@@ -117,8 +128,12 @@ GRANT ...;
 /*
 9. Rerun your query from step 4.
 */
+-- does not let thanos see the info
+SELECT name, dob, secret, level
+FROM person, secret
+WHERE person.id=secret.personid;
 
-SELECT ...;
+
 
 /*
 10. Query everything from the `safe_secrets` view.
@@ -130,7 +145,8 @@ SELECT ...;
     | Tony Stark   | I peed in my armor  |
 */
 
-SELECT ...;
+-- works
+SELECT * FROM safe_secrets;
 
 
 /* Part 3 - Using Indexes to Speed up Queries
@@ -148,7 +164,9 @@ SELECT ...;
 */
 
 CREATE TABLE person2(
-    ...
+    id          INT             NOT NULL,
+    name        VARCHAR(32)     NOT NULL,
+    dob         DATE            NOT NULL
 );
 
 /* 
@@ -169,13 +187,25 @@ in the same execution text box.
     4. Select everything from `person2` for the person whose name is `Zclvbwicgeevwpiyodbaamu`
 */
 
-EXPLAIN SELECT ...;
+-- cost:startup cost...actual cost <- this one is more important
+EXPLAIN SELECT *
+FROM person2
+LIMIT 100;
 
-EXPLAIN SELECT ...;
+EXPLAIN SELECT *
+FROM person2
+ORDER BY name
+LIMIT 100;
 
-EXPLAIN SELECT ...;
+EXPLAIN SELECT *
+FROM person2
+WHERE dob > '1900-01-01'
+ORDER BY name
+LIMIT 100;
 
-EXPLAIN SELECT ...;
+EXPLAIN SELECT *
+FROM person2
+WHERE name='Zclvbwicgeevwpiyodbaamu';
 
 /*
 5. Look at the results. Pay attention to the 1st row of each qyery plan. 
@@ -184,21 +214,31 @@ The second number (after the ...) is the total expected cost.
 6. Create an index named `name_idx` for the `name` attribute of `person2`.
 */
 
-CREATE INDEX ...;
+CREATE INDEX name_idx ON person2(name);
 
 /*
 7. Rerun your four queries. Analyze the differences in total expected costs.
 */
 
-EXPLAIN SELECT ...;
+EXPLAIN SELECT *
+FROM person2
+LIMIT 100;
 
-EXPLAIN SELECT ...;
+EXPLAIN SELECT *
+FROM person2
+ORDER BY name
+LIMIT 100;
 
-EXPLAIN SELECT ...;
+EXPLAIN SELECT *
+FROM person2
+WHERE dob > '1900-01-01'
+ORDER BY name
+LIMIT 100;
 
-EXPLAIN SELECT ...;
+EXPLAIN SELECT *
+FROM person2
+WHERE name='Zclvbwicgeevwpiyodbaamu';
 
 /* Part 4 - Submission
 
 1. Submit this file via CCLE
-*/
