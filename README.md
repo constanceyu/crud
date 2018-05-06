@@ -21,9 +21,9 @@ Joshua Gomez, Sr. Software Engineer, Getty Research Institute
 joshuagomez@ucla.edu
 
 ## Grading
-- 10% Quizzes (9 total)
-- 20% In-class Exercises (10 total)
-- 70% Homework (10 total)
+- 10% Quizzes
+- 20% In-class Exercises
+- 70% Homework
 
 ## Texts
 
@@ -41,73 +41,80 @@ joshuagomez@ucla.edu
 |  |  |
 |--:|--|
 |Topics:|Course Introduction<br/>Relational Database Concepts<br/>Entity-Relationship Modeling<br/>Basic SQL |
-| Tools:|[SQLite](https://sqlite.org/docs.html)  |
+| Tools:|[SQLite](https://sqlite.org/docs.html) |
 | Readings:|Elmasri: chapters 3-4, 7, 9 |
 
 ### Week 2
 |  |  |
 |--:|--|
 |Topics:|RDBMS Architecture<br/>Normalization<br/>Intermediate SQL|
-| Tools:|[MySQL](https://dev.mysql.com/doc/refman/5.7/en/)|
+| Tools:|[SQLite](https://sqlite.org/docs.html)|
 | Readings:|Elmasri: chapters 2, 5, 15|
 
 ### Week 3
 |  |  |
 |--:|--|
-|Topics:|Indexing<br/>ACID Transactions<br/>Intermediate SQL<br/>\*GIS data (if time permits)|
-| Tools:|[PostgreSQL](https://www.postgresql.org/docs/10/static/index.html)  |
-|  Readings:|Elmasri: chapters 18, 20-21|
+|Topics:|Transactions & ACID Properties<br/>Triggers<br/>SQL Functions|
+| Tools:|[MySQL](https://dev.mysql.com/doc/refman/5.7/en/)|
+|  Readings:|Elmasri: chapters 21, 26.1|
 
 ### Week 4
 |  |  |
 |--:|--|
-|Topics:|Replication<br/>Partitions<br/>Advanced SQL<br/>\*Time series data (if time permits)|
-| Tools:|[TimescaleDB](https://docs.timescale.com/v0.9/main)  |
-|  Readings:|Elmasri: chapter 25|
+|Topics:|Acess Structures<br/>Optimization<br/>Security|
+| Tools:|[PostgreSQL](https://www.postgresql.org/docs/10/static/index.html) |
+|  Readings:|Elmasri: chapter 20, 24|
 
 ### Week 5
+| | |
+|--:|--|
+|Topics:|Replication<br/>Partitions<br/>Advanced SQL<br/>GIS & Time series data (if time permits)|
+| Tools:|[PostgreSQL](https://www.postgresql.org/docs/10/static/index.html) |
+|  Readings:|Elmasri: chapter 25, 26|
+
+### Week 6
 |  |  |
 |--:|--|
 |Topics:|Intro to Information Retrieval<br/>Web Search<br/>Faceted Search|
 | Tools:|[ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)  |
 |  Readings:|Elmasri: chapter 27|
 
-### Week 6
+### Week 7
 |  |  |
 |--:|--|
 |Topics:|Intro to NoSQL Databases<br/>CAP Theorem<br/>Columnar Databases|
 | Tools:|[HBase](https://lucene.apache.org/solr/resources.html)<br/>[Cassandra](https://cassandra.apache.org/)|
 |  Readings:|[Google’s Bigtable Paper](https://research.google.com/archive/bigtable.html) (Chang et al., 2006)<br/>[Facebook’s Cassandra Paper](https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf) (Lakshman et al., 2009)|
 
-### Week 7
+### Week 8
 |  |  |
 |--:|--|
 |Topics:|Key Stores|
 | Tools:|[Riak](http://basho.com/products/#riak)<br/>[Redis](http://redis.io/)|
 |  Readings:|[Amazon’s Dynamo Paper](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf) (DiCandia et al., 2007)|
 
-### Week 8
+### Week 9
 |  |  |
 |--:|--|
 |Topics:|Document Stores & MapReduce|
 | Tools:|[MongoDB](https://www.mongodb.com/)<br/>[PostgreSQL](https://www.postgresql.org/docs/10/static/index.html) revisited|
 |  Readings:|*TBD*|
 
-### Week 9
+### Week 10
 |  |  |
 |--:|--|
 |Topics:|Graph Databases|
 | Tools:|[Neo4j](https://neo4j.com/)<br/>[ArrangoDB](https://arangodb.com/)|
 |  Readings:|*TBD*|
 
-### Week 10
+### Week 11 - *(Bonus material if time permits)*
 |  |  |
 |--:|--|
 |Topics:|Linked Data<br/>Triplestores<br/>SPARQL|
 | Tools:|[GraphDB](http://graphdb.ontotext.com/documentation/free/)|
 |  Readings:|*TBD*|
 
-### Week 11 - *(Bonus material if time permits)*
+### Week 12 - *(Bonus material if time permits)*
 |  |  |
 |--:|--|
 |Topics:|NewSQL Databases|
