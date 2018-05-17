@@ -94,7 +94,10 @@ Notice in the results that there are roles such as "Donor" and "Cataloguer"
 who are not artists. Let's find a way to limit it to just artists.
 */
 
-SELECT ...;
+SELECT role_name, count(role_name) AS count
+FROM objects_participants
+GROUP BY role_name
+ORDER BY count DESC;
 
 
 /*
@@ -135,13 +138,18 @@ Expected Result:
 | ... | ... |
 */
 
-SELECT ...;
+SELECT role_name, count(role_name) AS count
+FROM objects_participants, roles
+WHERE role_id=roles.id
+AND roles.type='production'
+GROUP BY role_name
+ORDER BY count DESC;
 
 /*
 Query 3
 
 OK, now lets's look at the groups of donors. Perform the same query as Query 2,
-but limit it to roles with a typr of "donor".
+but limit it to roles with a type of "donor".
 
 Expected Result:
 
@@ -167,7 +175,12 @@ Expected Result:
 | Exchangee   | 1 |
 */
 
-SELECT ...;
+SELECT role_name, count(role_name) AS count
+FROM objects_participants, roles
+WHERE role_id=roles.id
+AND roles.type='donor'
+GROUP BY role_name
+ORDER BY count DESC;
 
 /*
 Query 4
@@ -208,7 +221,13 @@ Expected Result:
 | ... | ... |
 */
 
-SELECT ...;
+-- when two rows have the same count #, the order is flipped
+-- using two `ORDER BY` clauses
+SELECT periods.name AS name, count(objects.id) AS count
+FROM objects, periods
+WHERE period_id=periods.id
+GROUP BY periods.id
+ORDER BY count DESC,periods.name DESC;
 
 /*
 Query 5
@@ -244,7 +263,12 @@ Expected Result:
 | Mid-Eighteenth Century  | 0 |
 */
 
-SELECT ...;
+SELECT periods.name AS name, count(objects.id) AS count, CAST(AVG(objects.decade) AS INT) AS avg
+FROM periods
+LEFT OUTER JOIN objects
+ON periods.id=period_id
+GROUP BY periods.id
+ORDER BY count DESC;
 
 /*
 Query 6
@@ -256,7 +280,7 @@ periods.
 
 Perform the same query as Query 5, but also get the average of the decade of 
 the objects per period. To make them easier to read, you can "cast" the average
-to an integer instead of decimal, like so: `CAST( AVG(object.decade) AS INT )`. 
+to an integer instead of decimal, like so: `CAST( AVG(objects.decade) AS INT )`. 
 The average only works on values that have numbers. As you can see in the 
 results, some of the periods have no objects with any decade information, and 
 thus the average is NULL.
@@ -288,7 +312,12 @@ Expected Result:
 | ... | ... | ... |
 */
 
-SELECT ...;
+SELECT periods.name AS name, count(objects.id) AS count, CAST(AVG(objects.decade) AS INT) AS avg
+FROM periods
+LEFT OUTER JOIN objects
+ON periods.id=period_id
+GROUP BY periods.id
+ORDER BY count DESC;
 
 /*
 Query 7
@@ -337,7 +366,13 @@ Expected Result:
 | Contemporary    | 17  | 2000 |
 */
 
-SELECT ...;
+SELECT periods.name AS name, count(objects.id) AS count, CAST(AVG(objects.decade) AS INT) AS avg
+FROM periods
+LEFT OUTER JOIN objects
+ON periods.id=period_id
+GROUP BY periods.id
+HAVING CAST(AVG(objects.decade) AS INT) IS NOT NULL
+ORDER BY avg ASC;
 
 /*
 Query 8
@@ -371,9 +406,18 @@ Query 8b: Count is 1252
 The collection does appear to have a greater representation of males.
 */
 
-SELECT ...;
+SELECT count(people.id)
+FROM people
+WHERE biography ~* '\s?her\s?'
+OR biography ~* '\s?she\s?'
+;
 
-SELECT ...;
+
+SELECT count(people.id)
+FROM people
+WHERE biography ~* '\s?his\s?'
+OR biography ~* '\s?he\s?'
+;
 
 /*
 Query 9
@@ -411,7 +455,12 @@ Expected Result:
 | ... | ... |
 */
 
-SELECT ...;
+SELECT types.name AS name, count(objects.id) AS count
+FROM types
+LEFT OUTER JOIN objects
+ON types.id=type_id
+GROUP BY types.id
+ORDER BY count DESC;
 
 /*
 Query 10
@@ -623,4 +672,3 @@ WITH ...;
 Part 3 - Submission
 
 Submit your `wk05hw.sql` file vie CCLE.
-*/
