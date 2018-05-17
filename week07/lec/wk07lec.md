@@ -220,13 +220,13 @@ Hadoop & HBase
 
 ----
 
-## Hadoop & HBase
+## Hadoop
 
 - 2007: Open source implementation of Google's stack
 - Adopted and sponsored by Yahoo! and Facebook
 - Synonymous with Big Data
 - Ecosystem:
-    - HDFS, HBase, Zookeeper, many more
+    - HDFS, YARN, HBase, Hive, Pig, etc.
 - Relatives:
     - Kafka, Mahout, Spark
 
