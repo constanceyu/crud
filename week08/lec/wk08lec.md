@@ -113,7 +113,7 @@ Amazon's Dynamo
     - But the sites needed to be always available
 - CAP Theorem says you must give up consistency
     - But not forever
-- Many apps can tolerate delayed propogation
+- Many apps can tolerate delayed propagation
     - Fine for social networks, not banks
  - "Eventual consistency" is basis of many NoSQL solutions
     - Amazon's Dynamo
