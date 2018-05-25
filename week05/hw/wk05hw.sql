@@ -221,13 +221,11 @@ Expected Result:
 | ... | ... |
 */
 
--- when two rows have the same count #, the order is flipped
--- using two `ORDER BY` clauses
 SELECT periods.name AS name, count(objects.id) AS count
 FROM objects, periods
 WHERE period_id=periods.id
 GROUP BY periods.id
-ORDER BY count DESC,periods.name DESC;
+ORDER BY count DESC;
 
 /*
 Query 5
@@ -263,7 +261,7 @@ Expected Result:
 | Mid-Eighteenth Century  | 0 |
 */
 
-SELECT periods.name AS name, count(objects.id) AS count, CAST(AVG(objects.decade) AS INT) AS avg
+SELECT periods.name AS name, count(objects.id) AS count
 FROM periods
 LEFT OUTER JOIN objects
 ON periods.id=period_id
@@ -326,7 +324,7 @@ A lot of the results in Query 6 had NULL for the average decade. Let's get rid
 of those. 
 
 Perform the same query as Query 6, but limit it to those rows that don't have a
-NULL for the average decade. *Hint: use the `HAVING` clause*.
+NULL for the average decade. Sort them by decade as well *Hint: use the `HAVING` clause*.
 
 Expected Result:
 
@@ -489,7 +487,13 @@ Expected Result:
 | Drawing | NULL    | 45855 |
 */
 
-SELECT ...;
+SELECT types.name AS name, objects.decade AS decade, count(objects.id) AS count
+FROM types
+LEFT OUTER JOIN objects
+ON types.id=type_id
+WHERE types.name='Drawing'
+GROUP BY types.id, objects.decade
+ORDER BY decade ASC;
 
 /*
 Query 11
@@ -666,7 +670,25 @@ Expected Result:
 | Wall facing | NULL    | 1680 |
 */
 
-WITH ...;
+WITH type_counts AS (
+    -- query 9
+    SELECT types.name AS name, count(objects.id) AS count
+    FROM types
+    LEFT OUTER JOIN objects
+    ON types.id=type_id
+    GROUP BY types.id
+    ORDER BY count DESC
+    LIMIT 20
+)
+-- query 10
+SELECT types.name AS name, objects.decade AS decade, count(objects.id) AS count
+FROM types
+LEFT OUTER JOIN objects
+ON types.id=type_id
+WHERE types.name IN (SELECT name FROM type_counts)
+GROUP BY types.id, objects.decade
+ORDER BY types.name ASC, decade ASC
+;
 
 /*
 Part 3 - Submission
