@@ -39,7 +39,7 @@ OK, now try inserting some data. All commands are in JavaScript. You can insert 
 
 Insert the following document into a collection named `books`.
 
-```json
+```javascript
 {
     title: "Zen and the Art of Motorcycle Maintenance",
     author: "Pirsig, Robert M.",
@@ -69,7 +69,7 @@ And you can look up the document you just inserted by issuing the following comm
 
 That should return a result like this (but not pretty-printed):
 
-```json
+```javascript
 { 
     "_id" : ObjectId("5b0d694cd3497284d9b88f1e"), 
     "title" : "Zen and the Art of Motorcycle Maintenance", 
@@ -98,7 +98,7 @@ The `ObjectId` will be different, as each ID is generated with a combination of 
 
 Insert the following documents into the `books` collection.
 
-```json
+```javascript
 {
     _id: "0-553-34584-2",
     title: "The Mind's I",
@@ -128,7 +128,7 @@ Insert the following documents into the `books` collection.
 }
 ```
 
-```json
+```javascript
 {
     _id: "0-688-12141-1",
     title: "The Language Instinct",
@@ -148,7 +148,7 @@ Insert the following documents into the `books` collection.
 }
 ```
 
-```json
+```javascript
 {
     _id: "0-19-857519-X",
     title: "The Selfish Gene",
@@ -167,7 +167,7 @@ Insert the following documents into the `books` collection.
 }
 ```
 
-```json
+```javascript
 {
     _id: "0-393-03891-2",
     title: "Guns, Germs, and Steel",
