@@ -604,6 +604,10 @@ And the list of available aggregation operations here: https://docs.mongodb.com/
 
 ---
 
+***Tip!*** Mongo Express is a graphical interface to Mongo. It is already running as part of the Docker stack you spun up. You can try it out at http://localhost:8082
+
+---
+
 ## Part 4: Submission
 
 Submit your `wk09ex.js` file via CCLE.
